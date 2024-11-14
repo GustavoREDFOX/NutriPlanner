@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>NutriPlanner</title>
+  <!-- Link CSS do arquivo -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Link CSS do bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <style>
+    header {
+      background-color: #F6F3F3;
+    }
+
+    header div img {
+      margin-top: 15px;
+    }
+
+    .banner_mobile {
+      visibility: hidden;
+    }
+
+    .video-tomate {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 768px) {
+      #inicial_menu {
+        display: flex;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      .banner_mobile {
+        visibility: visible;
+        width: 100%;
+      }
+
+      .novo_Banner {
+        visibility: hidden;
+        width: 0%;
+      }
+    }
+
+    .container-text-inicial {
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+    }
+
+    .menu-list li {
+      display: inline;
+      margin: 10px;
+    }
+
+    .menu-list li a {
+      color: black;
+    }
+
+    .menu-list li a:hover {
+      color: rgb(91, 216, 91)
+    }
+
+    nav {
+      background-color: #f6f3f3;
+    }
+
+    .box-select-link {
+      margin-top: 80px;
+    }
+
+    footer {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container-box-select-link {
+      margin-bottom: 60px;
+    }
+
+    .container-footer {
+      background-color: #3f3f3f;
+      color: #F6F3F3;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="">
+    <div class="d-flex justify-content-center">
+      <img src="img/Nova Logo NutriPlanner.png" alt="" width="12%">
+    </div>
+    <div style="padding: 1px;">
+      <nav>
+        <div>
+          <ul class="menu-list">
+            <li><a href="#">Tela Inicial</a></li>
+            <li><a href="#">Sobre NutriPlanner</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+
+    <img src="img/NovoBanner.png" alt="" width="100%" class="novo_Banner">
+    <img src="img/BannerMobile.png" alt="" class="banner_mobile" width="0%">
+    <div class="container-text-inicial">
+      <div class="container-text-inicial" style="width: 60%;">
+        <p>Venha conhecer as vantagens e facilidades em utilizar o NutriPlanner no seu dia a dia. Trazendo um controle
+          de saúde e bem-estar a um clique de distância. </p>
+        <p>Faça todo o seu acompanhamento diário alimentar em conjunto com profissionais confiavéis, de forma segunda
+            e intuitiva. O Nosso objetivo é trazer ao paciente facilidade aliada a saúde.</p>
+      </div>
+    </div>
+    <section class="box-select-link">
+      <div>
+        <div style="background-color: #3f3f3f; padding-top: 60px; padding-bottom: 20px;">
+      <div class="container-box-select-link">
+        <div>
+          <p style="text-align: center; color: #F6F3F3; margin-left: 20px; margin-bottom: 40px;">Aba de acesso ao NutriPlanner</p>
+          <!-- <a href="telacadastro.html" style="font-size: 25px;">Registrar-se</a>
+          <a href="login.php" style="font-size: 25px;">Já sou cadastrado</a> -->
+          <a href="telacadastro.html"><button type="button" class="btn btn-success"
+              style="padding-left: 28px; padding-right: 28px;">Registrar-se</button></a>
+          <a href="login.php"><button type="button" class="btn btn-success" style="padding-left: 15px;">Já sou
+              cadastrado</button></a>
+        </div>
+    
+        <br>
+
+        <a href="loginnutricionista.php"><button type="button" class="btn btn-dark" style="margin-left: 13px;">Área do
+            profissional</button></a>
+      </div>
+      </div>
+
+      <div class="video-tomate" style="margin-top: 25px;">
+        <video width="40%" autoplay loop>
+          <source src="video/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+          <object>
+            <!-- <embed src="video/Untitled video - Made with Clipchamp.mp4" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptacess="always"> -->
+          </object>
+        </video>
+      </div>
+    </section>
+    <br>
+    <h4 style="text-align: center;">Com a gente, cada passo importa!</h4>
+    <div class="d-flex justify-content-center">
+      <div class="container-text-inicial" style="width: 50%">
+        <p>Nesta jornada, você não precisa se preocupar em fazer tudo sozinho. A aplicação oferece recomendações fáceis
+          de seguir e adaptações que se encaixam no seu dia a dia. Com relatórios de progresso, dicas de receitas, e até
+          lembretes para manter a constância, nossa missão é tornar suas metas acessíveis e ajudar você a alcançar
+          resultados de maneira leve.</p>
+      </div>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center" style="margin-bottom: 45px;">
+      <img src="img/banner3.png" alt="" width="40%">
+    </div>
+    <section style="display: flex; justify-content: center;">
+      <br>
+      <h5 style="text-align: center;">Bem-vindo a um Novo Jeito de Cuidar da Sua Alimentação!</h5>
+      <div class="" style="display: flex; justify-content: center; width: 60%;">
+        <p>Nossa aplicação de nutrição é como um guia digital feito para ajudar você a se alimentar de forma mais
+          saudável e com praticidade. Ela traz ferramentas que facilitam o registro das refeições, mostram como estão
+          seus nutrientes e dão dicas para melhorar sua alimentação de acordo com suas metas.</p>
+        <p>Quer perder peso, ganhar massa muscular, ou só comer de forma mais equilibrada? Com planos personalizados e
+          um acompanhamento simples e intuitivo, aqui você tem o suporte necessário para transformar seu bem-estar!</p>
+      </div>
+    </section>
+    <br>
+    <h4 style="text-align: center;"><b>Vamos juntos nessa jornada rumo a uma vida mais saudável!</b></h4>
+    <h4 style="margin-top: 40px; text-align: center;">Dicas de receitas? Explore as páginas abaixo</h4>
+    <div class="d-flex justify-content-center">
+      <div class="card" style="width: 18rem; margin: 8px;">
+        <img class="card-img-top" src="img/channels4_profile.jpg" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">Tudo Gostoso</h5>
+          <p class="card-text">TudoGostoso oferece gratuitamente uma das mais ricas aplicações de receitas de cozinha em celulares e tablets.</p>
+          <a href="https://www.tudogostoso.com.br/" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; margin: 8px">
+        <img class="card-img-top" src="img/channels4_profile (1).jpg" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">Planelinha</h5>
+          <p class="card-text">Site da Rita Lobo com receitas que funcionam e informações sobre como ter uma alimentação saudável de verdade.</p>
+          <a href="https://panelinha.com.br/" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem; margin: 8px">
+        <img class="card-img-top" src="img/unnamed.jpg" alt="Imagem de capa do card">
+        <div class="card-body">
+          <h5 class="card-title">Panelaterapia</h5>
+          <p class="card-text">Faça da cozinha a sua terapia com a psicóloga que virou chef. Uma das mais populares blogueiras de gastronomia.</p>
+          <a href="https://panelaterapia.com/" class="btn btn-primary">Visitar</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="container-footer">
+    <hr style="width: 80%; margin-top: 90px;">
+    <footer>
+      <div>
+        <p>Tatuí - SP - Brasil</p>
+        <p><b>CEP 18270-000</b></p>
+        <br>
+        <br>
+        <hr>
+        <p>© Todos os Direitos reservados 2024 | Elaborado para fins acadêmicos</p>
+        <br>
+      </div>
+    </footer>
+  </div>
+</body>
+<!-- Javascript do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</html>
