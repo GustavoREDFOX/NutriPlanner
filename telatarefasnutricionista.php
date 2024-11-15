@@ -51,26 +51,30 @@ require('conexao.php');
 </head>
 
 <body>
-  <header class="" style="display: inline;">
+<header class="" style="display: inline;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: static; width: 100%;">
-      <img src="img/Nova Logo NutriPlanner.png" alt="" width="10%" class=""
-        style="margin-top: 12px; margin-left: 12px; position: static;">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown"
-        style="display: flex; justify-content: center; margin-left: -180px;">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="dashboardnutricionista.php">Dashboard</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Tarefas<span class="sr-only">(Página atual)</span></a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+
+      <div class="d-flex justify-content-between">
+        <div>
+          <img src="img/Nova Logo NutriPlanner.png" alt="" width="10%" class=""
+            style="margin-top: 12px; margin-left: 12px; position: static;">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown"
+          style="display: flex; justify-content: center; margin-left: -180px;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboardnutricionista.php">Pacientes</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Tarefas<span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+        <div style=" display:flex ; height: 70px;align-items: center; margin-top:10px;">
+          <a href="logout.php"><img src="img/iconUser.png" alt="" class="rounded-circle" width="70px"></a>
+        </div>
       </div>
     </nav>
   </header>
@@ -127,16 +131,37 @@ require('conexao.php');
     </div>
   </main>
   <div class="container-footer">
-    <hr style="width: 80%; margin-top: 90px;">
+    <hr style="width: 80%; margin-top: 20px;">
     <footer>
       <div>
         <p>Tatuí - SP - Brasil</p>
         <p><b>CEP 18270-000</b></p>
         <br>
+        <div class="d-flex justify-content-between">
+          <div>
+            <a href="#"><img src="img/github.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/instagram.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/whatsapp.png" alt="" width="25px"></a>
+          </div>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style=""><img src="img/linkedin.png" alt="" width="20px" style="vertical-align:sub;">
+              LinkedIn
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="https://www.linkedin.com/in/felipe-oliveira-468a4226a/">Felipe Gustavo</a>
+              <a class="dropdown-item" href="#">Gabriel Cipriani</a>
+              <a class="dropdown-item" href="https://www.linkedin.com/in/gustavodealmeida1/">Gustavo Almeida</a>
+            </div>
+          </div>
+        </div>
         <br>
         <hr>
-        <p>© Todos os Direitos reservados 2024 | Elaborado para fins acadêmicos</p>
-        <br>
+        <p>© 2024 Todos os Direitos reservados. Elaborado para fins acadêmicos</p>
+        <div class="d-flex justify-content-around" style="margin-bottom: 25px;">
+          <a href="extra-content/DOC NutriPlanner Privacidade.pdf" style="color:#91bd97">Politica e Privacidade</a>
+          <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" style="color:#91bd97">LGPD</a>
+        </div>
       </div>
     </footer>
   </div>

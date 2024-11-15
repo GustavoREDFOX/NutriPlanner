@@ -104,10 +104,47 @@
         <div>
           <ul class="menu-list">
             <li><a href="#">Tela Inicial</a></li>
-            <li><a href="#">Sobre NutriPlanner</a></li>
+            <li><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">Sobre NutriPlanner</a></li>
           </ul>
         </div>
       </nav>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Sobre NutriPlanner</h5>
+            <hr>
+            <p>O Protótipo NutriPlanner tem como objetivo ser uma demonstração funcional de uma aplicação <i>WEB</i> voltado para a área da saúde. Ela incorpora funcionalidades em que estão relacionadas as tarefas do dia a dia de um profissional de Nutrição. </p>
+            <hr>
+            <h5>Quem Nós Somos?</h5>
+            <p>Somos alunos do Curso de Gestão da Tecnologia da Informação, atualmente cursando na FATEC Tatuí - Prof. Wilson Roberto Ribeiro de Camargo - Faculdade de Tecnologia de Tatuí. E o nosso objetivo como alunos e desenvolvedores deste projeto, é concluir o trabalho de conclusão de curso aplicando o projeto ao público em troca de feedbacks e respostas para o problema apresentado no Projeto de Graduação.</p>
+            <hr>
+            <h5><b>Integrantes do protótipo Beta:</b></h5>
+            <div class="media">
+              <img src="img/felipeProfile.jpeg" alt="" class="rounded-circle" width="110px">
+              <div class="media-body" style="display: flex; align-self: center; font-size: 20px; margin-left: 22px;"><p><b>Felipe Gustavo de Oliveira</b><br>Idealizador e Pesquisa<br>felipe.oliveira184@fatec.sp.gov.br</p></div>
+            </div>
+            <div class="media">
+              <img src="img/CiprianiProfile.jpg" alt="" class="rounded-circle" width="110px">
+              <div class="media-body" style="display: flex; align-self: center; font-size: 20px; margin-left: 22px;"><p><b>Gabriel Cipriani Ferreira</b><br>Diagramas e Documentação<br>gabriel.ferreira85@fatec.sp.gov.br</p></div>
+            </div>
+            <div class="media">
+              <img src="img/GustavoProfile2.jpg" alt="" class="rounded-circle" width="110px">
+              <div class="media-body" style="display: flex; align-self: center; font-size: 20px; margin-left: 22px;"><p><b>Gustavo Gonçalves de Almeida</b><br>Desenvolvimento e Documentação Técnica<br>gustavo.dealmeida1@outlook.com</p></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
   <main>
@@ -119,38 +156,40 @@
         <p>Venha conhecer as vantagens e facilidades em utilizar o NutriPlanner no seu dia a dia. Trazendo um controle
           de saúde e bem-estar a um clique de distância. </p>
         <p>Faça todo o seu acompanhamento diário alimentar em conjunto com profissionais confiavéis, de forma segunda
-            e intuitiva. O Nosso objetivo é trazer ao paciente facilidade aliada a saúde.</p>
+          e intuitiva. O Nosso objetivo é trazer ao paciente facilidade aliada a saúde.</p>
       </div>
     </div>
     <section class="box-select-link">
       <div>
         <div style="background-color: #3f3f3f; padding-top: 60px; padding-bottom: 20px;">
-      <div class="container-box-select-link">
-        <div>
-          <p style="text-align: center; color: #F6F3F3; margin-left: 20px; margin-bottom: 40px;">Aba de acesso ao NutriPlanner</p>
-          <!-- <a href="telacadastro.html" style="font-size: 25px;">Registrar-se</a>
+          <div class="container-box-select-link">
+            <div>
+              <p style="text-align: center; color: #F6F3F3; margin-left: 20px; margin-bottom: 40px; font-size: 25px;">
+                <b>Área de acesso ao NutriPlanner</b></p>
+              <!-- <a href="telacadastro.html" style="font-size: 25px;">Registrar-se</a>
           <a href="login.php" style="font-size: 25px;">Já sou cadastrado</a> -->
-          <a href="telacadastro.html"><button type="button" class="btn btn-success"
-              style="padding-left: 28px; padding-right: 28px;">Registrar-se</button></a>
-          <a href="login.php"><button type="button" class="btn btn-success" style="padding-left: 15px;">Já sou
-              cadastrado</button></a>
+              <a href="telacadastro.html"><button type="button" class="btn btn-success"
+                  style="width: 200px;">Registrar-se</button></a>
+              <a href="login.php"><button type="button" class="btn btn-success" style="width: 200px;">Já sou
+                  cadastrado</button></a>
+            </div>
+
+            <br>
+
+            <a href="loginnutricionista.php"><button type="button" class="btn btn-dark"
+                style="margin-left: 13px; width: 200px;">Área do
+                profissional</button></a>
+          </div>
         </div>
-    
-        <br>
 
-        <a href="loginnutricionista.php"><button type="button" class="btn btn-dark" style="margin-left: 13px;">Área do
-            profissional</button></a>
-      </div>
-      </div>
-
-      <div class="video-tomate" style="margin-top: 25px;">
-        <video width="40%" autoplay loop>
-          <source src="video/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
-          <object>
-            <!-- <embed src="video/Untitled video - Made with Clipchamp.mp4" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptacess="always"> -->
-          </object>
-        </video>
-      </div>
+        <div class="video-tomate" style="margin-top: 25px;">
+          <video width="40%" autoplay loop>
+            <source src="video/Untitled video - Made with Clipchamp.mp4" type="video/mp4">
+            <object>
+              <!-- <embed src="video/Untitled video - Made with Clipchamp.mp4" type="application/x-shockwave-flash" allowfullscreen="false" allowscriptacess="always"> -->
+            </object>
+          </video>
+        </div>
     </section>
     <br>
     <h4 style="text-align: center;">Com a gente, cada passo importa!</h4>
@@ -185,7 +224,8 @@
         <img class="card-img-top" src="img/channels4_profile.jpg" alt="Imagem de capa do card">
         <div class="card-body">
           <h5 class="card-title">Tudo Gostoso</h5>
-          <p class="card-text">TudoGostoso oferece gratuitamente uma das mais ricas aplicações de receitas de cozinha em celulares e tablets.</p>
+          <p class="card-text">TudoGostoso oferece gratuitamente uma das mais ricas aplicações de receitas de cozinha em
+            celulares e tablets.</p>
           <a href="https://www.tudogostoso.com.br/" class="btn btn-primary">Visitar</a>
         </div>
       </div>
@@ -193,7 +233,8 @@
         <img class="card-img-top" src="img/channels4_profile (1).jpg" alt="Imagem de capa do card">
         <div class="card-body">
           <h5 class="card-title">Planelinha</h5>
-          <p class="card-text">Site da Rita Lobo com receitas que funcionam e informações sobre como ter uma alimentação saudável de verdade.</p>
+          <p class="card-text">Site da Rita Lobo com receitas que funcionam e informações sobre como ter uma alimentação
+            saudável de verdade.</p>
           <a href="https://panelinha.com.br/" class="btn btn-primary">Visitar</a>
         </div>
       </div>
@@ -201,7 +242,8 @@
         <img class="card-img-top" src="img/unnamed.jpg" alt="Imagem de capa do card">
         <div class="card-body">
           <h5 class="card-title">Panelaterapia</h5>
-          <p class="card-text">Faça da cozinha a sua terapia com a psicóloga que virou chef. Uma das mais populares blogueiras de gastronomia.</p>
+          <p class="card-text">Faça da cozinha a sua terapia com a psicóloga que virou chef. Uma das mais populares
+            blogueiras de gastronomia.</p>
           <a href="https://panelaterapia.com/" class="btn btn-primary">Visitar</a>
         </div>
       </div>
@@ -214,10 +256,31 @@
         <p>Tatuí - SP - Brasil</p>
         <p><b>CEP 18270-000</b></p>
         <br>
+        <div class="d-flex justify-content-between">
+          <div>
+            <a href="#"><img src="img/github.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/instagram.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/whatsapp.png" alt="" width="25px"></a>
+          </div>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style=""><img src="img/linkedin.png" alt="" width="20px" style="vertical-align:sub;">
+              LinkedIn
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="https://www.linkedin.com/in/felipe-oliveira-468a4226a/">Felipe Gustavo</a>
+              <a class="dropdown-item" href="#">Gabriel Cipriani</a>
+              <a class="dropdown-item" href="https://www.linkedin.com/in/gustavodealmeida1/">Gustavo Almeida</a>
+            </div>
+          </div>
+        </div>
         <br>
         <hr>
-        <p>© Todos os Direitos reservados 2024 | Elaborado para fins acadêmicos</p>
-        <br>
+        <p>© 2024 Todos os Direitos reservados. Elaborado para fins acadêmicos</p>
+        <div class="d-flex justify-content-around" style="margin-bottom: 25px;">
+          <a href="extra-content/DOC NutriPlanner Privacidade.pdf" style="color:#91bd97">Politica e Privacidade</a>
+          <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" style="color:#91bd97">LGPD</a>
+        </div>
       </div>
     </footer>
   </div>

@@ -11,7 +11,7 @@
 
 <body>
     <table class="table" id="Tab">
-        <div class="form-inline" style="margin: 5px; position:fixed; background-color:aliceblue; padding: 3px">
+        <div class="form-inline" style="margin: px; position:fixed; background-color:#fff; padding: 3px; width:100%">
             <input type="text" id="Busca" class="form-control mr-sm-2" placeholder="Pesquisar">
             <button id="btnBuscar" class="btn btn-outline-success my-2 my-sm-0" ><b>Buscar</b></button>
             <br>

@@ -25,4 +25,3 @@ if ($profissional == "P") {
     $sql_code = "INSERT INTO tb_usuario VALUES(0, '$nomeUsuario', '$email', '$senhaUsuario','$logradouro','$bairro','$cidade','$cep','$uf','$telefone','$dataNascimento','$cpf','$peso','$altura','$observacoes')";
     $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
     header('Location: login.php');}
-

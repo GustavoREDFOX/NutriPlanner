@@ -78,37 +78,38 @@ include('conexao.php');
 <body>
   <header class="" style="display: inline;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="position: static; width: 100%;">
-      <img src="img/Nova Logo NutriPlanner.png" alt="" width="10%" class=""
-        style="margin-top: 12px; margin-left: 12px; position: static;">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown"
-        style="display: flex; justify-content: center; margin-left: -180px;">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">Dashboard</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Rotina<span class="sr-only">(Página atual)</span></a>
-          </li>
-          <li class="nav-item">
-          </li>
-        </ul>
+
+      <div class="d-flex justify-content-between">
+        <div>
+          <img src="img/Nova Logo NutriPlanner.png" alt="" width="10%" class=""
+            style="margin-top: 12px; margin-left: 12px; position: static;">
+        </div>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown"
+          style="display: flex; justify-content: center; margin-left: -180px;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.php">Dashboard</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Rotina<span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item">
+            </li>
+          </ul>
+        </div>
+        <div style=" display:flex ; height: 70px;align-items: center; margin-top:10px;">
+          <a href="logout.php"><img src="img/iconUser.png" alt="" class="rounded-circle" width="70px"></a>
+        </div>
       </div>
     </nav>
   </header>
   <main>
     <section class="section-table">
       <div class="container-tabela-rotina">
-        <h4 class="d-flex justify-content-center" style="margin-top: 20px;margin-bottom: 20px"><b>ROTINA PACIENTE</b>
-        </h4>
-        <table class="table" style="font-size: 15px;">
+
+        <!-- <table class="table" style="font-size: 15px;">
           <tr>
-            <th>ID</th>
             <th>Data Refeição</th>
-            <th>Status</th>
             <th>Calorias</th>
             <th>Carboidratos</th>
             <th>Proteínas</th>
@@ -118,38 +119,65 @@ include('conexao.php');
             <th>Result. Proteinas</th>
             <th>Result. Gorduras</th>
 
-          </tr>
-          <?php
+          </tr> -->
+        <?php
 
-          $idUsuarioLogado = $_SESSION['id'];
+        $idUsuarioLogado = $_SESSION['id'];
 
-          $c = new conexao();
-          $query = "SELECT Id_Rotina, Data_Refeicao, Status_Refeicao, Observacao, Calorias_Meta, Carboidratos_Meta, Proteinas_Meta, Gordura_Meta, rotina.Calorias, rotina.Carboidratos, rotina.Proteinas, rotina.Gorduras, usuario.Usuario_Nome FROM tb_usuario usuario RIGHT JOIN tb_rotina rotina ON usuario.Id_Usuario = rotina.Id_Usuario LEFT JOIN tb_alimento alimento ON alimento.Id_Alimento = rotina.Id_Rotina WHERE rotina.Data_Refeicao = CURRENT_DATE and usuario.Id_Usuario = '$idUsuarioLogado' GROUP BY usuario.Usuario_Nome";
+        $MetCalo = 0;
+        $MetCarbo = 0;
+        $MetProt = 0;
+        $MetGordu = 0;
 
-          $stms = $c->conectar()->prepare($query);
-          $stms->execute();
+        $CaloCons = 0;
+        $CarboCons = 0;
+        $ProtCons = 0;
+        $GorduCons = 0;
 
-          $resultado = $stms->fetchAll(PDO::FETCH_ASSOC);
+        $c = new conexao();
+        $query = "SELECT Id_Rotina, Data_Refeicao, Status_Refeicao, Observacao, Calorias_Meta, Carboidratos_Meta, Proteinas_Meta, Gordura_Meta, rotina.Calorias, rotina.Carboidratos, rotina.Proteinas, rotina.Gorduras, usuario.Usuario_Nome FROM tb_usuario usuario RIGHT JOIN tb_rotina rotina ON usuario.Id_Usuario = rotina.Id_Usuario LEFT JOIN tb_alimento alimento ON alimento.Id_Alimento = rotina.Id_Rotina WHERE rotina.Data_Refeicao = CURRENT_DATE and usuario.Id_Usuario = '$idUsuarioLogado' GROUP BY usuario.Usuario_Nome";
+
+        $stms = $c->conectar()->prepare($query);
+        $stms->execute();
+
+        $resultado = $stms->fetchAll(PDO::FETCH_ASSOC);
 
 
-          foreach ($resultado as $row) {
-            echo "<tr>";
-            echo "<td>" . $row["Id_Rotina"] . "</td>";
-            echo "<td>" . $row["Data_Refeicao"] . "</td>";
-            echo "<td>" . $row["Status_Refeicao"] . "</td>";
-            echo "<td>" . $row["Calorias_Meta"] . "Kcal</td>";
-            echo "<td>" . $row["Carboidratos_Meta"] . "g</td>";
-            echo "<td>" . $row["Proteinas_Meta"] . "g</td>";
-            echo "<td>" . $row["Gordura_Meta"] . "g</td>";
-            echo "<td>" . $row["Calorias"] . "Kcal</td>";
-            echo "<td>" . $row["Carboidratos"] . "g</td>";
-            echo "<td>" . $row["Proteinas"] . "g</td>";
-            echo "<td>" . $row["Gorduras"] . "g</td>";
-            echo "</tr>";
-          }
-          ?>
+        foreach ($resultado as $row) {
 
-        </table>
+          $DataRef = $row["Data_Refeicao"];
+          $MetCalo = $row["Calorias_Meta"];
+          $MetCarbo = $row["Carboidratos_Meta"];
+          $MetProt = $row["Proteinas_Meta"];
+          $MetGordu = $row["Gordura_Meta"];
+
+          $CaloCons = $row["Calorias"];
+          $CarboCons = $row["Carboidratos"];
+          $ProtCons = $row["Proteinas"];
+          $GorduCons = $row["Gorduras"];
+        }
+        ?>
+
+        <!-- </table> -->
+        <div class="alert alert-dark" role="alert">
+          <h4 class="d-flex justify-content-center">Inserir Rotina Alimentar</h4>
+        </div>
+        <div class="">
+          <div class="list-group">
+            <div class="d-flex justify-content-between">
+              <button type="button" class="list-group-item list-group-item-action ">Meta Calorias <?php echo "<b>" . $MetCalo . " Kcal</b>"; ?></button>
+              <button type="button" class="list-group-item list-group-item-action">Meta Carboidratos <?php echo "<b>" . $MetCalo . " Kcal</b>"; ?></button>
+              <button type="button" class="list-group-item list-group-item-action">Meta Proteínas <?php echo "<b>" . $MetCalo . " Kcal</b>"; ?></button>
+              <button type="button" class="list-group-item list-group-item-action">Meta Gordura <?php echo "<b>" . $MetCalo . " Kcal</b>"; ?></button>
+            </div>
+            <div>
+              <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between">Calorias Consumidas <p><?php echo $CaloCons . " Kcal"; ?></p></button>
+              <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between">Carboidratos Consumidos <p><?php echo $CarboCons . " g"; ?></p></button>
+              <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between">Proteínas Consumidas <p><?php echo $ProtCons . " g"; ?></p></button>
+              <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between">Gordura Consumida <p><?php echo $GorduCons . " g"; ?></p></button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -181,14 +209,41 @@ include('conexao.php');
               <br>
               <div class="">
                 <label>Quantidade Consumida</label>
-                <input type="text" name="qtdeConsumida" id="" placeholder="Digite a quantidade de gramas consumidas" width="100px">
+                <input type="text" name="qtdeConsumida" id="" placeholder="Digite a quantidade de gramas consumidas" width="100px" required>
               </div>
               <br>
               <br>
               <br>
               <button type="submit" class="btn btn-primary">Atualizar Rotina</button>
               <button type="reset" class="btn btn-secondary">Limpar Campos</button>
+              <button type="button" class="btn btn-warning" name="" data-toggle="modal" data-target="#modalExemplo">Resetar Rotina</button>
             </form>
+            <!-- Modal de confirmação reset -->
+            <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmação para zerar rotina</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    Você tem certeza que deseja resetar sua rotina?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form action="procresetrot.php" method="POST">
+                      <button type="submit" class="btn btn-primary">Sim</button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br>
+            <h4>Consulta a Tabela TBCA</h4>
             <div class="d-flex justify-content-center" width="100%" style="margin-top: 40px">
               <iframe src="consulta.php" frameborder="0" width="900px" height="300px" class="">
               </iframe>
@@ -206,10 +261,31 @@ include('conexao.php');
         <p>Tatuí - SP - Brasil</p>
         <p><b>CEP 18270-000</b></p>
         <br>
+        <div class="d-flex justify-content-between">
+          <div>
+            <a href="#"><img src="img/github.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/instagram.png" alt="" width="25px"></a>
+            <a href="#"><img src="img/whatsapp.png" alt="" width="25px"></a>
+          </div>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false" style=""><img src="img/linkedin.png" alt="" width="20px" style="vertical-align:sub;">
+              LinkedIn
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="https://www.linkedin.com/in/felipe-oliveira-468a4226a/">Felipe Gustavo</a>
+              <a class="dropdown-item" href="#">Gabriel Cipriani</a>
+              <a class="dropdown-item" href="https://www.linkedin.com/in/gustavodealmeida1/">Gustavo Almeida</a>
+            </div>
+          </div>
+        </div>
         <br>
         <hr>
-        <p>© Todos os Direitos reservados 2024 | Elaborado para fins acadêmicos</p>
-        <br>
+        <p>© 2024 Todos os Direitos reservados. Elaborado para fins acadêmicos</p>
+        <div class="d-flex justify-content-around" style="margin-bottom: 25px;">
+          <a href="extra-content/DOC NutriPlanner Privacidade.pdf" style="color:#91bd97">Politica e Privacidade</a>
+          <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" style="color:#91bd97">LGPD</a>
+        </div>
       </div>
     </footer>
   </div>

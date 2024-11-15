@@ -101,9 +101,9 @@
                             onclick="toggleFields()"><label>Profissional de saúde?</label>
                         <div id="campos">
                             <label>Peso</label>
-                            <input type="number" name="peso" id="" class="form-control">
+                            <input type="text" name="peso" id="" class="form-control">
                             <label>Altura</label>
-                            <input type="number" name="altura" id="" class="form-control">
+                            <input type="text" name="altura" id="" class="form-control">
                             <label>Observações</label>
                             <input type="text" name="observacoes" id="" class="form-control">
                         </div>
@@ -119,15 +119,36 @@
         <hr style="width: 80%; margin-top: 90px;">
         <footer>
             <div>
-                <p>Tatuí - SP - Brasil</p>
-                <p><b>CEP 18270-000</b></p>
-                <br>
-                <br>
-                <hr>
-                <p>© Todos os Direitos reservados 2024 | Elaborado para fins acadêmicos</p>
-                <br>
+              <p>Tatuí - SP - Brasil</p>
+              <p><b>CEP 18270-000</b></p>
+              <br>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <a href="#"><img src="img/github.png" alt="" width="25px"></a>
+                  <a href="#"><img src="img/instagram.png" alt="" width="25px"></a>
+                  <a href="#"><img src="img/whatsapp.png" alt="" width="25px"></a>
+                </div>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style=""><img src="img/linkedin.png" alt="" width="20px" style="vertical-align:sub;">
+                    LinkedIn
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="https://www.linkedin.com/in/felipe-oliveira-468a4226a/">Felipe Gustavo</a>
+                    <a class="dropdown-item" href="#">Gabriel Cipriani</a>
+                    <a class="dropdown-item" href="https://www.linkedin.com/in/gustavodealmeida1/">Gustavo Almeida</a>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <hr>
+              <p>© 2024 Todos os Direitos reservados. Elaborado para fins acadêmicos</p>
+              <div class="d-flex justify-content-around" style="margin-bottom: 25px;">
+                <a href="extra-content/DOC NutriPlanner Privacidade.pdf" style="color:#91bd97">Politica e Privacidade</a>
+                <a href="https://www.gov.br/esporte/pt-br/acesso-a-informacao/lgpd" style="color:#91bd97">LGPD</a>
+              </div>
             </div>
-        </footer>
+          </footer>
     </div>
 </body>
 <script>

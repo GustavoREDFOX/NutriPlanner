@@ -23,7 +23,7 @@ foreach ($resultado as $row) {
     $Caloria = ($row["Kcal"]);
     $CaloriaFormatada = ($Caloria / 100) * $Quantidade;
     $Carboidratos = ($row['Carboidratos']);
-    $CarboidratosFormatada = ($Caloria / 100) * $Quantidade;
+    $CarboidratosFormatada = ($Carboidratos / 100) * $Quantidade;
     $Proteinas = ($row["Proteina"]);
     $ProteinasFormatada = ($Proteinas / 100) * $Quantidade;
     $Gordura = ($row['Gordura']);
